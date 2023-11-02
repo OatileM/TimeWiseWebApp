@@ -1,0 +1,71 @@
+﻿<Window x:Class="TimeManagementApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeManagementApp"
+        mc:Ignorable="d"
+        Title="Time Wise" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/background.jpg" TileMode="None"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="198"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="173"/>
+            <ColumnDefinition Width="226"/>
+            <ColumnDefinition Width="27"/>
+            <ColumnDefinition Width="173"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="77"/>
+            <RowDefinition Height="103"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Name="Logo" RenderTransformOrigin="0.5,0.5">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.301"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.Source>
+                <BitmapImage  UriSource="D:\Visual Studio\School Projects\PROG6221\TimeManagementApp\Images\logo.png" />
+            </Image.Source>
+        </Image>
+        <Border BorderBrush="#FF3DD2CC" BorderThickness="5" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="4" Margin="0,0,0,45">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+        <Label Grid.Column="2" Grid.Row="1" Name="lblUsername" Content="Username: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="15,0,211,45" Grid.ColumnSpan="2" />
+        <TextBox x:Name="txtbUsername" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Height="36" Margin="15,11,10,0" BorderBrush="Black" />
+        <Label Grid.Column="2" Grid.Row="1" Name="lblPassword" Content="Password: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="15,45,211,0" Grid.ColumnSpan="2" />
+        <TextBox x:Name="txtbPassword" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Height="34" Margin="16,52,10,0" BorderBrush="Black" />
+        <Label Grid.Column="2" Grid.Row="1" Name="lblStudentNumber" Content="Student Number: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="15,90,211,45" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <TextBox x:Name="txtbStudentNumber" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Height="34" Margin="15,97,10,0" BorderBrush="Black" Grid.RowSpan="2" />
+        <Label Grid.Column="2" Grid.Row="2" Name="lblStudentName" Content="Student Name: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="15,34,211,12" Grid.ColumnSpan="2" />
+        <TextBox x:Name="txtbStudentName" Grid.Column="3" Grid.Row="2" VerticalAlignment="Top" Height="34" Margin="15,34,10,0" BorderBrush="Black" />
+        <Label Grid.Column="2" Grid.Row="2" Name="lblStudentYear" Content="Year of Study: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="15,68,211,67" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <TextBox x:Name="txtbStudentYear" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Height="34" Margin="15,0,98,0" BorderBrush="Black" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="3" Name="lblStudentSemester" Content="Semesters: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="11,22,214,22" Grid.ColumnSpan="2" />
+        <TextBox x:Name="txtbStudentSemesters" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" Height="35" Margin="15,0,98,29" BorderBrush="Black" />
+        <Label Grid.Column="2" Grid.Row="3" Name="lblStudentModules" Content="Modules: " FontSize="29" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" Margin="15,65,211,70" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <TextBox x:Name="txtbStudentModules" Grid.Column="3" Grid.Row="3" VerticalAlignment="Top" Height="35" Margin="15,66,98,0" BorderBrush="Black" Grid.RowSpan="2" />
+        <Button x:Name="btnRegister" Content="Register" FontSize="30" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4"  Margin="68,16,98,0" VerticalAlignment="Top" BorderBrush="#FF001211" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF000606" Height="40" Background="White" Click="btnRegister_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>
