@@ -13,12 +13,14 @@ namespace TimeManagementApp
     public partial class StudyModules : Window
     {
         private List<Module> selectedModules;
+        private int currentStudentId; // Add a field to store the current student's ID
 
 
-        public StudyModules(List<Module> modules, int numOfWeeks, List<Module> selectedModules)
+        public StudyModules(List<Module> modules, int numOfWeeks, List<Module> selectedModules, int currentStudentId)
         {
             InitializeComponent();
             this.selectedModules = selectedModules;
+            this.currentStudentId = currentStudentId; // Initialize the current student's ID
 
             // In this example, you would retrieve the modules from the database using the Modules DbSet.
             using (var context = new StudentDB())
@@ -39,13 +41,16 @@ namespace TimeManagementApp
 
         private void PopulateListBox()
         {
+            // Filter modules based on the current student's ID
+            List<Module> modulesForCurrentStudent = selectedModules
+                .Where(module => module.StudentId == currentStudentId)
+                .ToList();
 
-            // Create a list of module names for the ComboBox
-            List<string> moduleNames = selectedModules.Select(module => module.Name).ToList();
-
-            // Set the ItemsSource for the ComboBox to the list of module names
-            cbModules.ItemsSource = selectedModules;
+            lbStudyModules.ItemsSource = modulesForCurrentStudent;
         }
+
+
+
 
 
         private void CalculateSelfStudyHours(List<Module> modules, int numberOfWeeks)

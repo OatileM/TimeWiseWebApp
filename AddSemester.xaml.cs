@@ -100,7 +100,7 @@ namespace TimeManagementApp
 
             }
 
-            StudyModules studyModulesWindow = new StudyModules(modules, numOfWeeks, SelectedModules);
+            StudyModules studyModulesWindow = new StudyModules(modules, numOfWeeks, SelectedModules, student.StudentId);
             studyModulesWindow.Show();
             this.Close();
         }
